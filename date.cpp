@@ -15,6 +15,22 @@ Date::Date(int d, int m, int y) {
 //    else cout << "Wrong data. " <<d << " " << m << " " << y << endl;
 };
 
+bool Date::checkDate(int d, int m, int y){
+    bool output = true;
+    if (m == 2) { //February
+        if ((y%4==0 && y%100!=0) || y%400==0) {
+            if (d > 29) output=false;
+        }
+        else if (d > 28) output=false;
+    }
+    else if ((m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12)){
+        if (d > 31) output=false; //months 31-day
+    }
+    else if (d > 30) output=false; //months 30-day
+
+    return output;
+};
+
 void Date::setDay(int d) {
     if (checkDate(d, month, year)) day = d;
 //    else cout << "Wrong data. " << d << " " << month << " " << year << endl;
