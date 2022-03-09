@@ -1,5 +1,5 @@
-#ifndef ZADANIE1_DATE_H
-#define ZADANIE1_DATE_H
+#ifndef DATE.H
+#define DATE.H
 
 
 class Date {
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //ZADANIE1_DATE_H
+#endif; //ZADANIE1_DATE_H
