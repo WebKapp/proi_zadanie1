@@ -1,23 +1,27 @@
 #ifndef DATE.H
 #define DATE.H
 
+enum Months {
+    January=1, February, March, April, May, June,
+    July, August, September, October, November, December
+};
 
 class Date {
 private:
     int day;
     int month;
     int year;
-
-    bool checkDate(int d, int m, int y);
+    bool checkIfLeap(int year);
+    bool checkDate(int day, int month, int year);
 
 public:
-    Date(int d, int m, int y);
+    Date(int day, int month, int year);
 
-    void setDay(int d);
+    void setDay(int new_day);
 
-    void setMonth(int m);
+    void setMonth(int new_month);
 
-    void setYear(int y);
+    void setYear(int new_year);
 
     int getDay();
 
@@ -27,4 +31,4 @@ public:
 };
 
 
-#endif; //ZADANIE1_DATE_H
+#endif //DATE_H
