@@ -1,3 +1,10 @@
+//
+//  date.h
+//  zadanie1
+//
+//  Created by Kacper Murygin on 08/03/2022.
+//
+
 #ifndef DATE.H
 #define DATE.H
 
