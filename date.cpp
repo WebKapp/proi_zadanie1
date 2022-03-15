@@ -17,17 +17,15 @@ bool Date::checkIfLeap(int year){
 
 bool Date::checkDate(int day, int month, int year){
     if(day < 1 || day > 31) return false;
-    if(month < 1 || month > 12) return false;
-    if(month == 2) {
+    if(month < January || month > December) return false;
+    if(month == February) {
         if (checkIfLeap(year)) {
             if (day > 29) return false;
             else if (day > 28) return false;
         }
     }
-    if (month == 4 || month == 6 || month == 9 || month == 11){
-        if(day > 30){
-            return false;
-        }
+    if (month == April || month == June || month == September || month == November){
+        if(day > 30) return false;
     }
     return true;
 };
