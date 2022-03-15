@@ -1,3 +1,10 @@
+//
+//  main.cpp
+//  zadanie1
+//
+//  Created by Kacper Murygin on 08/03/2022.
+//
+
 #include <iostream>
 #include "date.h"
 using namespace std;
@@ -13,5 +20,8 @@ int main() {
     Date date2(10, 11, 2021);
     
     Date date3(24, 13, 2023);
+
+    date2.setDay(34);
+    date2.setYear(-223);
     return 0;
 }

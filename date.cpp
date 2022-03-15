@@ -1,3 +1,10 @@
+//
+//  date.cpp
+//  zadanie1
+//
+//  Created by Kacper Murygin on 08/03/2022.
+//
+
 #include <iostream>
 #include "date.h"
 using namespace std;
@@ -16,13 +23,14 @@ bool Date::checkIfLeap(int year){
 }
 
 bool Date::checkDate(int day, int month, int year){
+    if(year < 1) return false;
     if(day < 1 || day > 31) return false;
     if(month < January || month > December) return false;
     if(month == February) {
         if (checkIfLeap(year)) {
             if (day > 29) return false;
-            else if (day > 28) return false;
         }
+        else if (day > 28) return false;
     }
     if (month == April || month == June || month == September || month == November){
         if(day > 30) return false;
@@ -32,17 +40,17 @@ bool Date::checkDate(int day, int month, int year){
 
 void Date::setDay(int new_day) {
     if (checkDate(new_day, month, year)) day = new_day;
-    else cout << "Wrong data. " << day << " " << month << " " << year << endl;
+    else cout << "Wrong date- " << new_day << "." << month << "." << year << endl;
 }
 
 void Date::setMonth(int new_month) {
     if (checkDate(day, Months(new_month), year)) month = Months(new_month);
-    else cout << "Wrong data. " << day << " " << Months(new_month) << " " << year << endl;
+    else cout << "Wrong date- " << day << "." << Months(new_month) << "." << year << endl;
 }
 
 void Date::setYear(int new_year) {
     if (checkDate(day, month, new_year)) year =  new_year;
-    else cout << "Wrong data. " << day << " " << month << " " << new_year<< endl;
+    else cout << "Wrong date- " << day << "." << month << "." << new_year<< endl;
 }
 
 int Date::getDay() {
