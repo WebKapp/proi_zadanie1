@@ -18,11 +18,11 @@ Date::Date(int d, int m, int y) {
     else cout << "Wrong date- " <<d << "." << m << "." << y << endl;
 };
 
-bool Date::checkIfLeap(int year){
+bool Date::checkIfLeap(int year) {
     return ( ((year % 4 == 0) & (year % 100 != 0)) || (year % 400 == 0));
 }
 
-bool Date::checkDate(int day, int month, int year){
+bool Date::checkDate(int day, int month, int year) {
     if(year < 1) return false;
     if(day < 1 || day > 31) return false;
     if(month < January || month > December) return false;
@@ -38,19 +38,19 @@ bool Date::checkDate(int day, int month, int year){
     return true;
 };
 
-void Date::setDay(int new_day) {
-    if (checkDate(new_day, month, year)) day = new_day;
-    else cout << "Wrong date- " << new_day << "." << month << "." << year << endl;
+void Date::setDay(int newDay) {
+    if (checkDate(newDay, month, year)) day = newDay;
+    else cout << "Wrong date- " << newDay << "." << month << "." << year << endl;
 }
 
-void Date::setMonth(int new_month) {
-    if (checkDate(day, Months(new_month), year)) month = Months(new_month);
-    else cout << "Wrong date- " << day << "." << Months(new_month) << "." << year << endl;
+void Date::setMonth(int newMonth) {
+    if (checkDate(day, newMonth, year)) month = newMonth;
+    else cout << "Wrong date- " << day << "." << newMonth << "." << year << endl;
 }
 
-void Date::setYear(int new_year) {
-    if (checkDate(day, month, new_year)) year =  new_year;
-    else cout << "Wrong date- " << day << "." << month << "." << new_year<< endl;
+void Date::setYear(int newYear) {
+    if (checkDate(day, month, newYear)) year =  newYear;
+    else cout << "Wrong date- " << day << "." << month << "." << newYear<< endl;
 }
 
 int Date::getDay() {
@@ -63,4 +63,8 @@ int Date::getMonth() {
 
 int Date::getYear() {
     return year;
+}
+
+void Date::printDate() {
+    cout << day << "." << month << "." << year << endl;
 }
