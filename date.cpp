@@ -64,3 +64,7 @@ int Date::getMonth() {
 int Date::getYear() {
     return year;
 }
+
+void Date::printDate() {
+    cout << day << "." << month << "." << year << endl;
+}

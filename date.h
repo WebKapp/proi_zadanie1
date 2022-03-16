@@ -35,6 +35,8 @@ public:
     int getMonth();
 
     int getYear();
+
+    void printDate();
 };
 
 
