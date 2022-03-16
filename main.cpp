@@ -10,28 +10,33 @@
 using namespace std;
 
 int main() {
-    Date date1(10,12,2020);
+    Date date1(10,December,2020);
     cout << date1.getDay() << "." << date1.getMonth() << "." << date1.getYear() << endl;
 
-    date1.setMonth(1);
+    date1.setMonth(January);
     date1.printDate();
 
-    Date date2(10, 11, 2021);
+    Date date2(10, November, 2021);
     date2.printDate();
     
-    Date date3(24, 13, 2023); //wrong date
+    Date date3(34, September , 2023); //wrong date
 
-    Date date4(24, 12, 2022);
+    Date date4(24, December, 2022);
     date4.printDate();
 
     date2.setDay(34); //wrong day
     date2.setYear(-223); //wrong year
 
-    Date date5(28, 2, 2022);
+    Date date5(28, February, 2022);
     date5.printDate();
 
-    Date date6(29, 2, 2022); //not a leap year
-    Date date7(29, 2, 2024); //a leap year
+    Date date6(29, February, 2022); //not a leap year
+    Date date7(29, February, 2024); //a leap year
+
+    date7.printDate();
+
+    date7.setDay(-10);
+    date7.setMonth(March);
 
     date7.printDate();
     return 0;

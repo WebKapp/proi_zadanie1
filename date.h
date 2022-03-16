@@ -16,19 +16,19 @@ enum Months {
 class Date {
 private:
     int day;
-    int month;
+    Months month;
     int year;
     bool checkIfLeap(int year);
-    bool checkDate(int day, int month, int year);
+    bool checkDate(int day, Months month, int year);
 
 public:
-    Date(int day, int month, int year);
+    Date(int day, Months month, int year);
 
-    void setDay(int new_day);
+    void setDay(int newDay);
 
-    void setMonth(int new_month);
+    void setMonth(Months newMonth);
 
-    void setYear(int new_year);
+    void setYear(int newYear);
 
     int getDay();
 
@@ -38,7 +38,7 @@ public:
 
     void printDate();
 
-    void printWrongDate(int day, int month, int year);
+    void printWrongDate(int day, Months month, int year);
 };
 
 

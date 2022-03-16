@@ -9,7 +9,7 @@
 #include "date.h"
 using namespace std;
 
-Date::Date(int d, int m, int y) {
+Date::Date(int d,Months m, int y) {
     if (checkDate(d, m, y)) {
         day = d;
         month = m;
@@ -22,18 +22,24 @@ bool Date::checkIfLeap(int year) {
     return ( ((year % 4 == 0) & (year % 100 != 0)) || (year % 400 == 0));
 }
 
-bool Date::checkDate(int day, int month, int year) {
-    if(year < 1) return false;
-    if(day < 1 || day > 31) return false;
-    if(month < January || month > December) return false;
+bool Date::checkDate(int day, Months month, int year) {
+    if(year < 1)
+        return false;
+    if(day < 1 || day > 31)
+        return false;
+    if(month < January || month > December)
+        return false;
     if(month == February) {
         if (checkIfLeap(year)) {
-            if (day > 29) return false;
+            if (day > 29)
+                return false;
         }
-        else if (day > 28) return false;
+        else if (day > 28)
+            return false;
     }
     if (month == April || month == June || month == September || month == November){
-        if(day > 30) return false;
+        if(day > 30)
+            return false;
     }
     return true;
 };
@@ -43,7 +49,7 @@ void Date::setDay(int newDay) {
     else printWrongDate(newDay, month, year);
 }
 
-void Date::setMonth(int newMonth) {
+void Date::setMonth(Months newMonth) {
     if (checkDate(day, newMonth, year)) month = newMonth;
     else printWrongDate(day, newMonth, year);
 }
@@ -69,6 +75,6 @@ void Date::printDate() {
     cout << day << "." << month << "." << year << endl;
 }
 
-void Date::printWrongDate(int day, int month, int year){
+void Date::printWrongDate(int day, Months month, int year){
     cout << "Wrong date- " << day << "." << month << "." << year<< endl;
 }
