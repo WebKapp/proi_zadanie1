@@ -37,6 +37,8 @@ public:
     int getYear();
 
     void printDate();
+
+    void printWrongDate(int day, int month, int year);
 };
 
 
