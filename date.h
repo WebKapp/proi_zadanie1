@@ -32,7 +32,7 @@ public:
 
     int getDay();
 
-    int getMonth();
+    Months getMonth();
 
     int getYear();
 

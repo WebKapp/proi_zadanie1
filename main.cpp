@@ -39,5 +39,8 @@ int main() {
     date7.setMonth(March);
 
     date7.printDate();
+
+    Date date8(23,(Months)4,2022);
+    date8.printDate();
     return 0;
 }

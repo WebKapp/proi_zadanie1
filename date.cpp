@@ -63,7 +63,7 @@ int Date::getDay() {
     return day;
 }
 
-int Date::getMonth() {
+Months Date::getMonth() {
     return month;
 }
 
